@@ -16,30 +16,28 @@ engine:
   id: copilot
   model: claude-sonnet-4
 
-runtimes:
-  deno:
-    version: "2.x"
-
 network:
   firewall: true
   allowed:
     - defaults
     - github
-    - "deno.land"
-    - "*.deno.land"
-    - "jsr.io"
-    - "*.jsr.io"
+    - deno
 ---
 
 # Build and Test Oak
 
-You are a CI/CD agent. Your job is to test this Deno middleware framework.
+You are a CI/CD agent. Your job is to build and test this Deno web framework.
 
 ## Steps
 
-1. Run the test suite:
+1. Check Deno version:
+   ```
+   deno --version
+   ```
+
+2. Run the test suite:
    ```
    deno task test
    ```
 
-2. Report the results - if tests pass, indicate success. If they fail, analyze the error output and report what went wrong.
+3. Report the results - if tests pass, indicate success. If they fail, analyze the error output and report what went wrong.
